@@ -1,0 +1,29 @@
+<!-- pages/about/about.wxml -->
+<view class="about">
+	<!-- 轮播图 -->
+	<swiper indicator-dots autoplay>
+		<swiper-item>
+			<image class="swiper-img" src='../../img/rongshu.png'></image>
+		</swiper-item>
+		<swiper-item>
+			<image class="swiper-img" src='../../img/rongshu-2.png'></image>
+		</swiper-item>
+	
+	</swiper>
+	<!-- 联系方式 -->
+	<view class="link">
+		<view class="link-title">
+			联系我们
+		</view>
+		<view bindtap="callMe" class="link-item">
+			<icon class="iconfont icon-dianhua"></icon>
+			电话联系
+		</view>
+		<view class="link-item" bindtap="goto">
+			<icon class="iconfont icon-dingwei"></icon>
+			导航
+			<map id="map" show-location></map>
+		</view>
+		<button open-type="contact" send-message-title send-message-path send-message-img>留言</button>
+	</view>
+</view>

@@ -1,0 +1,34 @@
+<!--pages/my/my.wxml-->
+<view class="my">
+	<view wx:if="{{hasUserInfo}}">
+		<view class="my-item">
+			<image class="my-avatar" src="{{userInfo.avatarUrl}}"></image>
+			<label class="my-head__label">
+				名称： {{userInfo.linkman}}
+			</label>
+		</view>
+		<view class="my-item" bindtap="changeVisible" data-type="company">
+			公司名称： {{userInfo.company}}
+		</view>
+		<view class="my-item" bindtap="changeVisible" data-type="tel">
+			联系电话：{{userInfo.tel}}
+		</view>
+		<view class="my-item" bindtap="changeVisible" data-type="address">
+			地址：{{userInfo.address}}
+		</view>
+		<button class="my-item__create-export-button" type="primary" bindtap="createExporter">成为合作伙伴</button>
+	</view>
+	<!-- 获取用户信息 -->
+	<button wx:else open-type="getUserInfo" bindgetuserinfo="getUserInfo">登入微信</button>
+	<!-- 修改信息滑动快 -->
+	<view class="my-change" wx:if='{{changeBox.visible}}'>
+		<label class="change-label">
+			修改信息
+		</label>
+		<input class="change-input" value="{{userInfo.company}}" bindinput="bindInput" data-type="company" placeholder="请输入公司"></input>
+		<input class="change-input" value="{{userInfo.tel}}" bindinput="bindInput" data-type="tel" placeholder="请输入电话号码"></input>
+		<input class="change-input" value="{{userInfo.address}}" bindinput="bindInput" data-type="address" placeholder="请输入地址"></input>
+		<button bindtap="back">返回</button>
+	</view>
+</view>
+<view></view>

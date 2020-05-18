@@ -1,0 +1,37 @@
+/* pages/about/about.wxss */
+.swiper-img {
+  height: 100%;
+  width: 100%;
+}
+
+.link {
+  margin: 20rpx;
+}
+
+.link-item {
+  margin: 20rpx;
+  padding: 30rpx 0;
+  border-bottom: 2rpx solid black;
+}
+
+.link-title {
+  font-size: 42rpx;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.link-title::after,
+.link-title::before {
+  content: '';
+  height: 2rpx;
+  width: 30%;
+  background-color: black;
+}
+
+#map {
+  width: 100%;
+  height: 300px;
+  margin-top: 20rpx;
+}

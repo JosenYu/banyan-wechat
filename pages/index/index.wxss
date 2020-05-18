@@ -1,0 +1,9 @@
+/**index.wxss**/
+.index {
+  padding: 10rpx;
+}
+
+.list {
+  border-bottom: 1rpx solid black;
+  padding: 10rpx;
+}

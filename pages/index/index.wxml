@@ -1,0 +1,12 @@
+<!--index.wxml-->
+<view class="index">
+	<searchBar bindsearchfun="searchfun"></searchBar>
+	<!-- 商品列表 -->
+	<view class="list" wx:for='{{list}}' wx:key='index'>
+		<view>名称：{{item.name}}</view>
+		<view>品牌：{{item.brand}}</view>
+		<view>规格：{{item.model}}</view>
+		<view>剩余数量：{{item.surplusNumber}}</view>
+		<view>单位：{{item.unit}}</view>
+	</view>
+</view>
