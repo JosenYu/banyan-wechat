@@ -8,13 +8,28 @@
 			</label>
 		</view>
 		<view class="my-item" bindtap="changeVisible" data-type="company">
-			公司名称： {{userInfo.company}}
+			<label>
+				公司名称： {{userInfo.company}}
+			</label>
+			<label>
+				>
+			</label>
 		</view>
 		<view class="my-item" bindtap="changeVisible" data-type="tel">
-			联系电话：{{userInfo.tel}}
+			<label>
+				联系电话：{{userInfo.tel}}
+			</label>
+			<label>
+				>
+			</label>
 		</view>
 		<view class="my-item" bindtap="changeVisible" data-type="address">
-			地址：{{userInfo.address}}
+			<label>
+				地址：{{userInfo.address}}
+			</label>
+			<label>
+				>
+			</label>
 		</view>
 		<button class="my-item__create-export-button" type="primary" bindtap="createExporter">成为合作伙伴</button>
 	</view>

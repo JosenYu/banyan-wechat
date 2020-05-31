@@ -129,6 +129,9 @@ Page({
     })
     var tel = wx.getStorageSync('tel')
     utils.request('/customer/getExporterByTel', 'get', { tel: tel }, (res) => {
+      if (res.data.doc) {
+        
+      }
       this.setData({
         userInfo: Object.assign(this.data.userInfo, {
           company: res.data.doc.company,

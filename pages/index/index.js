@@ -14,22 +14,29 @@ Page({
       unit: "只"
     }]
   },
-  handleContact(e) {
-    console.log(e.detail.path)
-    console.log(e.detail.query)
-  },
+  // handleContact(e) {
+  //   console.log(e.detail.path)
+  //   console.log(e.detail.query)
+  // },
   searchfun(e) {
-    console.log(e.detail.searchInput);
-    util.request('/stock/queryCondition', 'get', { name: e.detail.searchInput, brand: e.detail.searchInput, model: e.detail.searchInput }, (res) => {
-      console.log(res);
-      this.setData({
-        list: res.data.doc
-      })
-    });
+    let content = '';
+    e ? context = e.detail.searchInput : content = ''
+    util.request('/stock/queryCondition', 'get',
+      {
+        name: content,
+        brand: content,
+        model: content
+      },
+      (res) => {
+        console.log(res);
+        this.setData({
+          list: res.data.doc
+        })
+      });
   },
 
   onLoad: function () {
-
+    this.searchfun();
   },
 
 })

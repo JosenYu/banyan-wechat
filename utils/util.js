@@ -21,13 +21,16 @@ const formatNumber = n => {
  * @param {Function} cb 成功回调
  */
 const request = (url = '', method = 'get', data, cb) => {
-  let BASE_URL = 'http://10.0.0.32:3000'
-  wx.getSystemInfo({
-    success: function (res) {
-      //开发环境
-      res.platform === 'devtools' ? BASE_URL = 'http://10.0.0.32:3000' : BASE_URL = 'http://funjosen.fun:3000'
-    }
-  })
+  let BASE_URL = '';
+  const res = wx.getSystemInfoSync()
+  console.log(res.platform);
+
+  //开发环境
+  res.platform === 'devtools'
+    ? BASE_URL = 'http://10.0.0.20:3000'
+    : BASE_URL = 'https://funjosen.fun:3000'
+  // BASE_URL = 'https://funjosen.fun:3000'
+
   wx.request({
     url: BASE_URL + url,
     method: method,
